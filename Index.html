@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Team Builder</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial;
+      background: linear-gradient(to bottom, black, darkorange);
+      color: white;
+      text-align: center;
+    }
+
+    section {
+      padding: 40px 20px;
+    }
+
+    h1 {
+      margin-top: 20px;
+    }
+
+    .box {
+      background: rgba(0,0,0,0.7);
+      margin: 20px auto;
+      padding: 20px;
+      width: 300px;
+      border-radius: 15px;
+      box-shadow: 0 0 15px orange;
+    }
+
+    input, select {
+      width: 90%;
+      padding: 10px;
+      margin: 10px 0;
+      border: none;
+      border-radius: 8px;
+    }
+
+    button {
+      padding: 10px 20px;
+      border: none;
+      border-radius: 10px;
+      background: orange;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    button:hover {
+      background: red;
+      color: white;
+    }
+
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    li {
+      background: rgba(255,255,255,0.1);
+      margin: 5px;
+      padding: 10px;
+      border-radius: 8px;
+    }
+
+    .insta-btn {
+      background: #E1306C;
+      color: white;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+
+<body>
+
+<section>
+  <h1>🔥 Rishav Team Builder 🔥</h1>
+
+  <div class="box">
+    <h3>Add Player</h3>
+    
+    <input type="text" id="name" placeholder="Enter player name">
+    
+    <select id="role">
+      <option>Rusher</option>
+      <option>Sniper</option>
+      <option>Support</option>
+      <option>Leader</option>
+    </select>
+    
+    <br>
+    <button onclick="addPlayer()">Add to Team</button>
+  </div>
+
+  <div class="box">
+    <h3>Team Members</h3>
+    <ul id="teamList"></ul>
+  </div>
+</section>
+
+<!-- CONTACT SECTION -->
+<section>
+  <h2>📩 Need Help?</h2>
+  <p>Contact me on Instagram</p>
+
+  <button class="insta-btn" onclick="openInsta()">
+    Open Instagram
+  </button>
+</section>
+
+<script>
+function addPlayer() {
+  let name = document.getElementById("name").value;
+  let role = document.getElementById("role").value;
+
+  if (name === "") {
+    alert("Enter player name!");
+    return;
+  }
+
+  let li = document.createElement("li");
+  li.textContent = name + " - " + role;
+
+  document.getElementById("teamList").appendChild(li);
+
+  document.getElementById("name").value = "";
+}
+
+function openInsta() {
+  window.open("https://instagram.com/itz_me_rishav53", "_blank");
+}
+</script>
+
+</body>
+</html>
